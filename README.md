@@ -2,8 +2,8 @@
 ## Nome:Gabriel guedes de oliveira
 ## Nº Matricula: 202104964
 
-#Gabriel guedes de oliveira
-#nº matricula 202104964
+//#Gabriel guedes de oliveira
+//#nº matricula 202104964
 
 
 #include <stdio.h>
@@ -764,7 +764,7 @@ void listarconta(){
      
      
      printf("saldo: %s\n", tr.saldo);
-     printf("%s\n", tr.descricao);
+    
      printf("-----------------------------\n\n");
 
 
@@ -882,7 +882,7 @@ void saque(){
 		  tr.saldo_long = atol(tr.saldo);
 		  
           fclose(trans);
-  //getch();
+  
 		  } else {
 		  		printf("conta nao cadastrada!\n");
 		  }
@@ -902,12 +902,14 @@ void saque(){
           	fflush(stdin);
 			printf("digite a descricao da operacao realizada!\n");
           	gets(tr.descricao);
+          	
+          	
           	ltoa(valor,valor1,10);
-		  strcpy(tr.saldo,db.saldo);
+		  
 		  strcat(tr.descricao,"|R$-");
 		  strcat(tr.descricao,valor1);
           fflush(stdin);
-          printf("digite a data do saque ../../....");
+          printf("digite a data do saque ../../....\n");
           scanf("%d %d %d", &tr.dia, &tr.mes, &tr.ano);
           	
           	fwrite(&tr, sizeof(TRANS), 1, trans2);
@@ -1029,7 +1031,7 @@ void deposito(){
           	
           	
           	
-          	printf("%ld\n", db.saldo_long);
+          
           	fflush(stdin);
 			printf("digite a descricao da operacao realizada!\n");
           	gets(db.descricao);
@@ -1050,7 +1052,7 @@ void deposito(){
 		  strcat(tr.descricao,"|R$+");
 		  strcat(tr.descricao,valor1);
 		  fflush(stdin);
-          printf("digite a data do deposito ../../....");
+          printf("digite a data do deposito ../../....\n");
           scanf("%d %d %d", &tr.dia, &tr.mes, &tr.ano);
           
           	fwrite(&tr, sizeof(TRANS), 1, trans);
@@ -1122,7 +1124,7 @@ void transferencia(){
           strcat(tr.descricao,"|R$-");
           strcat(tr.descricao,valor1);
           fflush(stdin);
-          printf("digite a data do transferencia ../../....");
+          printf("digite a data do transferencia ../../....\n");
           scanf("%d %d %d", &tr.dia, &tr.mes, &tr.ano);
           printf("%s\n", tr.descricao);
           fwrite(&tr, sizeof(TRANS), 1, trans2);
@@ -1240,3 +1242,4 @@ void extrato(){
   fclose(trans);
 getch();
 }
+
